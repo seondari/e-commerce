@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="../index.html" class="logo">Toko Kita</a>
+    <ul>
+      <li><a href="../index.html">Beranda</a></li>
+      <li><a href="products.html">Produk</a></li>
+      <li><a href="cart.html">Keranjang</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h2>Checkout</h2><br>
+    <div id="checkout-area" class="checkout-layout">
+      <form id="checkout-form" class="form-box">
+        <label for="c-name">Nama Penerima</label>
+        <input type="text" id="c-name" required>
+        <label for="c-phone">No. Telepon</label>
+        <input type="tel" id="c-phone" pattern="[0-9]{9,15}" title="9 sampai 15 digit angka" required>
+        <label for="c-address">Alamat Lengkap</label>
+        <textarea id="c-address" rows="3" required></textarea>
+        <label for="c-payment">Metode Pembayaran</label>
+        <select id="c-payment">
+          <option>Transfer Bank</option>
+          <option>E-Wallet</option>
+          <option>COD (Bayar di Tempat)</option>
+        </select>
+        <button type="submit" class="btn">Buat Pesanan</button>
+      </form>
+
+      <aside class="order-summary">
+        <h3>Ringkasan Pesanan</h3>
+        <div id="checkout-summary"></div>
+        <p class="summary-total">Total: <strong id="checkout-total">Rp 0</strong></p>
+      </aside>
+    </div>
+  </main>
+
+  <footer>&copy; 2026 E-commerce - Tugas Pemrograman Web</footer>
+
+  <script src="../js/cart.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/checkout.js"></script>
+</body>
+</html>
