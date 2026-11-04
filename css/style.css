@@ -109,3 +109,101 @@ footer {
     color: #fff;
     margin-top: 40px;
 }
+
+/* update fitur baru, halaman detail produk, dan halaman checkout. */
+
+a.product-card { 
+    display: block; 
+}
+
+a.product-card:hover { 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12); 
+}
+
+.product-detail { 
+    display: flex; 
+    gap: 32px; 
+    flex-wrap: wrap; 
+}
+
+.product-detail img { 
+    width: 100%; 
+    max-width: 380px; 
+    border-radius: 8px; 
+    background: var(--light); 
+}
+
+.detail-info { 
+    flex: 1; 
+    min-width: 260px; 
+}
+
+.detail-info h2 { 
+    margin-bottom: 8px; 
+}
+
+.detail-info p { 
+    margin-bottom: 12px; 
+}
+
+button.btn { 
+    border: none; 
+    cursor: pointer; 
+    font-size: 1rem; 
+}
+
+.cart-item {
+  display: flex; 
+  align-items: center; 
+  gap: 16px;
+  padding: 12px 0; 
+  border-bottom: 1px solid #e5e7eb; 
+  flex-wrap: wrap;
+}
+
+.cart-item img { 
+    width: 80px; 
+    height: 80px; 
+    object-fit: cover; 
+    border-radius: 6px; 
+    background: var(--light); 
+}
+
+.cart-info { 
+    flex: 1; 
+    min-width: 140px; 
+}
+
+.cart-qty { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+}
+
+.cart-qty button { 
+    width: 28px; 
+    height: 28px; 
+    cursor: pointer; 
+}
+
+.subtotal { 
+    min-width: 110px; 
+    text-align: right; 
+    font-weight: bold; 
+}
+
+.remove { 
+    background: #ef4444; 
+    color: #fff; 
+    border: none; 
+    padding: 6px 12px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+}
+
+.cart-summary { 
+    text-align: right; 
+    margin-top: 24px; 
+    font-size: 1.2rem; 
+}
+
