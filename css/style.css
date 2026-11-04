@@ -207,3 +207,90 @@ button.btn {
     font-size: 1.2rem; 
 }
 
+/* update fitur baru, halaman login, dan halaman register. */
+
+.form-box { 
+    max-width: 420px; 
+    margin: 0 auto; 
+}
+
+.form-box h2 { 
+    margin-bottom: 8px; 
+}
+
+.form-box label { 
+    display: block; 
+    margin: 12px 0 4px; 
+    font-weight: bold; 
+}
+
+.form-box input, .form-box textarea, .form-box select {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #d1d5db; 
+    border-radius: 6px; 
+    font: inherit;
+}
+
+.form-box button { 
+    margin-top: 16px; 
+    width: 100%; 
+}
+
+.form-msg { 
+    color: #dc2626; 
+    margin-top: 12px; 
+    min-height: 1.2em; 
+}
+
+.form-alt { 
+    margin-top: 16px; 
+    text-align: center; 
+}
+
+.form-alt a { 
+    color: var(--primary); 
+}
+
+.checkout-layout { 
+    display: flex; 
+    gap: 32px; 
+    flex-wrap: wrap; 
+}
+
+.checkout-layout .form-box { 
+    flex: 1; 
+    min-width: 280px; 
+    margin: 0; 
+    max-width: none; 
+}
+
+.order-summary { 
+    flex: 1; 
+    min-width: 260px; 
+    background: var(--light); 
+    padding: 16px; 
+    border-radius: 8px; 
+    align-self: flex-start; 
+}
+
+.summary-row { 
+    display: flex; 
+    justify-content: space-between; 
+    gap: 12px; 
+    padding: 6px 0; 
+    border-bottom: 1px solid #e5e7eb; 
+}
+
+.summary-total { 
+    margin-top: 12px; 
+    text-align: right; 
+    font-size: 1.1rem; 
+}
+
+.success { 
+    text-align: center; 
+    padding: 48px 16px; 
+    width: 100%; 
+}
+
