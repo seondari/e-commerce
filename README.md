@@ -21,7 +21,8 @@ Tugas kelompok mata kuliah Pemrograman Web.
 ## Teknologi
 HTML, CSS, JavaScript (belum menggunakan framework)
 
-#BACA SEBELUM MENGERJAKAN
+
+# BACA SEBELUM MENGERJAKAN
 ## Cara menjalankan
 1. Clone repo ini: `git clone <url-repo>`
 2. Buka folder di VS Code.
