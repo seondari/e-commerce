@@ -23,6 +23,8 @@ HTML, CSS, JavaScript (belum menggunakan framework)
 
 
 # BACA SEBELUM MENGERJAKAN
+Perhatikan langkah-langkah dengan teliti
+
 ## Cara menjalankan
 1. Clone repo ini: `git clone <url-repo>`
 2. Buka folder di VS Code.
@@ -42,3 +44,5 @@ assets/   gambar produk
 
 ## Sumber gambar
 (menyesuaikan).
+
+Diperbarui 4-11-2026
