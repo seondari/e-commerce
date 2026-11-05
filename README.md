@@ -17,8 +17,8 @@ Tugas kelompok mata kuliah Pemrograman Web.
 - Halaman detail produk
 - Keranjang belanja (tambah, ubah jumlah, hapus)
 - Wishlist (ikon hati) dan badge jumlah item di navbar
-- Registrasi dan login (simulasi dengan localStorage)
-- Checkout dan pembuatan pesanan (simulasi dengan localStorage)
+- Registrasi dan login (simulasi dengan **localStorage**)
+- Checkout dan pembuatan pesanan (simulasi dengan **localStorage**)
 - Riwayat pesanan dan pembatalan pesanan
 - Tema terang/gelap, ikon, dan notifikasi toast
 
