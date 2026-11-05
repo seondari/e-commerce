@@ -1,4 +1,4 @@
-# Toko Ngawi - Website E-Commerce
+# Toko Kita - Website E-Commerce
 
 Tugas kelompok mata kuliah Pemrograman Web.
 
