@@ -7,6 +7,7 @@ function getCart() {
 
 function saveCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  if (window.updateCartBadge) updateCartBadge();
 }
 
 function addToCart(id) {
@@ -15,7 +16,7 @@ function addToCart(id) {
   if (item) item.qty += 1;
   else cart.push({ id, qty: 1 });
   saveCart(cart);
-  alert("Produk ditambahkan ke keranjang!");
+  showToast("Produk ditambahkan ke keranjang");
 }
 
 function changeQty(id, delta) {
@@ -64,13 +65,12 @@ async function renderCart() {
             <p class="price">Rp ${p.price.toLocaleString("id-ID")}</p>
           </div>
           <div class="cart-qty">
-            <button onclick="changeQty(${p.id}, -1)">-</button>
+            <button onclick="changeQty(${p.id}, -1)"><i class="fa-solid fa-minus"></i></button>
             <span>${item.qty}</span>
-            <button onclick="changeQty(${p.id}, 1)">+</button>
+            <button onclick="changeQty(${p.id}, 1)"><i class="fa-solid fa-plus"></i></button>
           </div>
           <p class="subtotal">Rp ${subtotal.toLocaleString("id-ID")}</p>
-          <button class="remove" onclick="removeItem(${p.id})">Hapus</button>
-        </div>`;
+          <button class="remove" onclick="removeItem(${p.id})"><i class="fa-solid fa-trash"></i></button>        </div>`;
     }).join("");
 
     totalEl.textContent = "Rp " + total.toLocaleString("id-ID");

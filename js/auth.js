@@ -53,14 +53,14 @@ function logout() {
   location.reload();
 }
 
-function updateNavbar() {
+/* function updateNavbar() {
   const user = getCurrentUser();
   const link = document.querySelector('.navbar a[href$="login.html"]');
   if (!link || !user) return;
   link.textContent = "Logout (" + user.name + ")";
   link.href = "#";
   link.addEventListener("click", e => { e.preventDefault(); logout(); });
-}
+} */
 
 document.getElementById("register-form")?.addEventListener("submit", register);
 document.getElementById("login-form")?.addEventListener("submit", login);

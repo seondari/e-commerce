@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produk</title>
     <link rel="stylesheet" href="../style.css">
+    <script src="../js/layout.js"></script> 
 </head> 
 <body>
     <nav class="navbar">
@@ -16,15 +17,28 @@
             <li><a href="login.html">Login</a></li>
     </nav>
 
-    <main class="container">
-        <h2>Daftar Produk</h2><br>
-        <div id="product-list" class="product-grid">
-            <!-- Produk akan ditampilkan di sini -->
-        </div>
-    </main>
+      <main class="container">
+    <h2><i class="fa-solid fa-store"></i> Daftar Produk</h2>
+    <div class="toolbar">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="search" placeholder="Cari produk...">
+      </div>
+      <select id="category"></select>
+      <select id="sort">
+        <option value="default">Urutkan</option>
+        <option value="low">Harga terendah</option>
+        <option value="high">Harga tertinggi</option>
+        <option value="az">Nama A-Z</option>
+      </select>
+    </div>
+    <p id="result-count" class="muted"></p>
+    <div id="product-list" class="product-grid"></div>
+  </main>
     
     <footer>&copy; 2026 E-commerce. Semua hak dilindungi. Tugas Pemrograman Web</footer>
-
+    
+    <script src="../js/cart.js"></script>
     <script src="../js/products.js"></script>
     <script src="../js/auth.js"></script>
 </body>
