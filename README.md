@@ -196,4 +196,4 @@ Untuk melihat atau menghapus data uji coba: **F12 → Application → Local Stor
 ## Sumber gambar dan update selanjutnya
 (menyesuaikan).
 
-Diperbarui 5-11-2026
+Diperbarui 6-11-2026
