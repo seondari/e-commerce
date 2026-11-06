@@ -26,7 +26,7 @@ Tugas kelompok mata kuliah Pemrograman Web.
 ## Teknologi
 HTML, CSS, JavaScript (belum menggunakan framework).
 Ikon memakai Font Awesome lewat CDN, jadi butuh koneksi internet agar ikon tampil.;
-Backend : Node.js, express.js, dan CORS
+**Backend** : Node.js, express.js, dan CORS
 
 ---
 
