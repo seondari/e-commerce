@@ -40,7 +40,7 @@ async function initCheckout() {
     return;
   }
 
-  document.getElementById("checkout-form").addEventListener("submit", e => {
+  document.getElementById("checkout-form").addEventListener("submit", async e => {
     e.preventDefault();
     const order = {
       id: "ORD-" + Date.now(),
@@ -55,17 +55,31 @@ async function initCheckout() {
       status: "Diproses"
     };
 
+    // 1. Simpan ke localStorage
     let orders = [];
     try { orders = JSON.parse(localStorage.getItem("orders")) || []; } catch {}
     orders.push(order);
     localStorage.setItem("orders", JSON.stringify(orders));
+
+    // 2. Simpan juga ke Backend Server (data/orders.json)
+    try {
+      await fetch("http://localhost:3000/api/orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(order)
+      });
+    } catch {}
+
     saveCart([]);
 
     area.innerHTML = `
       <div class="success">
         <h2>Pesanan Berhasil!</h2>
         <p>Nomor pesanan: <strong>${order.id}</strong></p>
-        <a href="products.html" class="btn">Lanjut Belanja</a>
+        <p style="margin-top:8px;">
+          <a href="orders.html" class="btn">Lihat Riwayat Pesanan</a>
+          <a href="products.html" class="btn">Lanjut Belanja</a>
+        </p>
       </div>`;
   });
 }

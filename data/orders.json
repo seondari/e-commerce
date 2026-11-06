@@ -1,0 +1,21 @@
+[
+  {
+    "id": "ORD-1793946543141",
+    "email": "anggraito35@gmail.com",
+    "name": "Tes",
+    "phone": "1234567890",
+    "address": "bogor",
+    "payment": "Transfer Bank",
+    "items": [
+      {
+        "id": 1,
+        "name": "Kaos Polos Hitam",
+        "price": 75000,
+        "qty": 1
+      }
+    ],
+    "total": 75000,
+    "date": "2026-11-06T06:29:03.142Z",
+    "status": "Diproses"
+  }
+]
