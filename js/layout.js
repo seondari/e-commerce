@@ -45,6 +45,18 @@
   }
   window.updateCartBadge = updateCartBadge;
 
+  function updateWishlistBadge() {
+    const badge = document.getElementById("wishlist-badge");
+    if (!badge) return;
+    let count = 0;
+    try {
+      count = (JSON.parse(localStorage.getItem("wishlist")) || []).length;
+    } catch {}
+    badge.textContent = count;
+    badge.hidden = count === 0;
+  }
+  window.updateWishlistBadge = updateWishlistBadge;
+
   function showToast(msg, type) {
     let box = document.getElementById("toast-box");
     if (!box) {
@@ -84,7 +96,9 @@
         <ul>
           <li><a href="${root}index.html"><i class="fa-solid fa-house"></i> Beranda</a></li>
           <li><a href="${pages}products.html"><i class="fa-solid fa-store"></i> Produk</a></li>
+          <li><a href="${pages}wishlist.html"><i class="fa-solid fa-heart"></i> Wishlist <span id="wishlist-badge" class="badge" hidden>0</span></a></li>
           <li><a href="${pages}cart.html"><i class="fa-solid fa-cart-shopping"></i> Keranjang <span id="cart-badge" class="badge" hidden>0</span></a></li>
+          ${user ? `<li><a href="${pages}orders.html"><i class="fa-solid fa-box-open"></i> Pesanan</a></li>` : ""}
           <li>${user
             ? `<a href="#" id="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Logout (${esc(user.name)})</a>`
             : `<a href="${pages}login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>`}</li>
@@ -118,6 +132,7 @@
     }
 
     updateCartBadge();
+    updateWishlistBadge();
     paintToggle();
   }
 

@@ -4,7 +4,44 @@ function rupiah(n) {
   return "Rp " + n.toLocaleString("id-ID");
 }
 
+function getWishLocal() {
+  try {
+    return JSON.parse(localStorage.getItem("wishlist")) || [];
+  } catch {
+    return [];
+  }
+}
+
+function checkWish(id) {
+  return getWishLocal().includes(Number(id));
+}
+
+function handleWish(id, btn) {
+  const numId = Number(id);
+  let list = getWishLocal();
+  const exists = list.includes(numId);
+
+  if (exists) {
+    list = list.filter(item => item !== numId);
+    if (window.showToast) showToast("Dihapus dari wishlist");
+  } else {
+    list.push(numId);
+    if (window.showToast) showToast("Ditambahkan ke wishlist");
+  }
+
+  localStorage.setItem("wishlist", JSON.stringify(list));
+  if (window.updateWishlistBadge) updateWishlistBadge();
+
+  const active = !exists;
+  const icon = btn.querySelector("i");
+  if (icon) {
+    icon.className = (active ? "fa-solid" : "fa-regular") + " fa-heart";
+    icon.style.color = active ? "var(--danger)" : "";
+  }
+}
+
 function cardHTML(p) {
+  const wished = checkWish(p.id);
   return `
     <div class="product-card">
       <a href="product-detail.html?id=${p.id}" class="card-link">
@@ -15,9 +52,14 @@ function cardHTML(p) {
           <p class="price">${rupiah(p.price)}</p>
         </div>
       </a>
-      <button class="btn" onclick="addToCart(${p.id})">
-        <i class="fa-solid fa-cart-plus"></i> Tambah
-      </button>
+      <div style="display:flex; border-top:1px solid var(--border);">
+        <button class="btn" style="flex:1;" onclick="addToCart(${p.id})">
+          <i class="fa-solid fa-cart-plus"></i> Tambah
+        </button>
+        <button type="button" class="icon-btn" style="margin:0; border:none; border-radius:0; width:46px; height:auto;" onclick="handleWish(${p.id}, this)" title="Tambah ke Wishlist">
+          <i class="${wished ? "fa-solid" : "fa-regular"} fa-heart" style="${wished ? "color:var(--danger);" : ""}"></i>
+        </button>
+      </div>
     </div>`;
 }
 
@@ -77,6 +119,7 @@ async function loadDetail() {
       return;
     }
 
+    const wished = checkWish(p.id);
     box.innerHTML = `
       <div>
         <a href="products.html" class="back"><i class="fa-solid fa-arrow-left"></i> Kembali ke produk</a><br>
@@ -87,9 +130,14 @@ async function loadDetail() {
         <h2>${p.name}</h2>
         <p class="price">${rupiah(p.price)}</p>
         <p>${p.description}</p>
-        <button class="btn" onclick="addToCart(${p.id})">
-          <i class="fa-solid fa-cart-plus"></i> Tambah ke Keranjang
-        </button>
+        <div style="display:flex; gap:10px; align-items:center; margin-top:16px;">
+          <button class="btn" style="margin-top:0;" onclick="addToCart(${p.id})">
+            <i class="fa-solid fa-cart-plus"></i> Tambah ke Keranjang
+          </button>
+          <button type="button" class="icon-btn" style="width:44px; height:44px; border-radius:10px; margin:0;" onclick="handleWish(${p.id}, this)" title="Tambah ke Wishlist">
+            <i class="${wished ? "fa-solid" : "fa-regular"} fa-heart" style="${wished ? "color:var(--danger);" : ""}"></i>
+          </button>
+        </div>
       </div>`;
   } catch (err) {
     box.innerHTML = "<p>Gagal memuat produk.</p>";
