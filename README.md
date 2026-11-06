@@ -21,11 +21,12 @@ Tugas kelompok mata kuliah Pemrograman Web.
 - Checkout dan pembuatan pesanan (simulasi dengan **localStorage**)
 - Riwayat pesanan dan pembatalan pesanan
 - Tema terang/gelap, ikon, dan notifikasi toast
-- fitur wishlist
+- Penyimpanan data menggunakan JSON
 
 ## Teknologi
 HTML, CSS, JavaScript (belum menggunakan framework).
 Ikon memakai Font Awesome lewat CDN, jadi butuh koneksi internet agar ikon tampil.
+Backend : Node.js, express.js, dan CORS
 
 ---
 
