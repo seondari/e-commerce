@@ -21,7 +21,7 @@ Tugas kelompok mata kuliah Pemrograman Web.
 - Checkout dan pembuatan pesanan (simulasi dengan **localStorage**)
 - Riwayat pesanan dan pembatalan pesanan
 - Tema terang/gelap, ikon, dan notifikasi toast
-- Penyimpanan data menggunakan JSON
+- Penyimpanan data customer dan pesanan menggunakan JSON
 
 ## Teknologi
 HTML, CSS, JavaScript (belum menggunakan framework).
